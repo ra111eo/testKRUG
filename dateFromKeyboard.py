@@ -1,0 +1,17 @@
+# coding: cp1251
+from stringToDatetime import string_to_datetime
+from mainLogic import body
+
+print('\nƒл€ выхода из программы введите в любое из полей ввода команду "exit"\n',)
+while True:
+    start_pointer = string_to_datetime(input('¬ведите начало диапазона:'))
+    if start_pointer != '':
+        stop_pointer = string_to_datetime(input('¬ведите конец диапазона:'))
+        if stop_pointer != '':
+            try: 
+                aperture = float(input('¬ведите значение апертуры:'))
+                body(start_pointer,stop_pointer,aperture)
+            except ValueError as ve:
+                print('ќшибка ввода данных:', ve)
+                print()
+        
